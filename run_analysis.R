@@ -69,3 +69,4 @@ merged.df3$Activity <- gsub("6", "Laying", merged.df3$Activity)
 byActSubj <- merged.df3 %>% group_by(Activity, Subject)
 res <- byActSubj %>% summarize_all(list(mean))
 
+print(res)
