@@ -63,7 +63,9 @@ merged.df3$Activity <- gsub("6", "Laying", merged.df3$Activity)
 # TASK 5: Create a second, independent tidy data set with the average of each variable
 #         for each activty and each subject
 
+# Thanks to https://dplyr.tidyverse.org/reference/summarise_all.html and
+# https://dplyr.tidyverse.org/reference/group_by.html for coding tips.
 
-
-
+byActSubj <- merged.df3 %>% group_by(Activity, Subject)
+res <- byActSubj %>% summarize_all(list(mean))
 
